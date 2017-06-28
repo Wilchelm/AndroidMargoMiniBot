@@ -22,6 +22,15 @@ public class MainGui extends JFrame {
     private BufferedImage image;
     private BufferedImage helm;
     private BufferedImage buty;
+    private BufferedImage arcymagpierscien;
+    private BufferedImage arcymagmiecz;
+    private BufferedImage arcymagnaszyjnik;
+    private BufferedImage arcymagrekawice;
+    private BufferedImage arcymagzbroja;
+    private BufferedImage arcymagimage;
+    private BufferedImage arcymaghelm;
+    private BufferedImage arcymagbuty;
+
 
     public static void main(String[] args) {
         new MainGui();
@@ -73,22 +82,78 @@ public class MainGui extends JFrame {
     private void setOnClicks() {
         startButton.addActionListener(e -> {System.out.println("Start");
             long start=System.currentTimeMillis();
+            ClassLoader classLoader = getClass().getClassLoader();
 
                 try {
-                    pierscien = ImageIO.read(new File("C:\\Users\\X\\Desktop\\pierscien.png"));
-                    miecz = ImageIO.read(new File("C:\\Users\\X\\Desktop\\miecz.png"));
-                    naszyjnik = ImageIO.read(new File("C:\\Users\\X\\Desktop\\naszyjnik.png"));
-                    rekawice = ImageIO.read(new File("C:\\Users\\X\\Desktop\\rekawice.png"));
-                    zbroja = ImageIO.read(new File("C:\\Users\\X\\Desktop\\zbroja.png"));
-                    buty = ImageIO.read(new File("C:\\Users\\X\\Desktop\\buty.png"));
-                    helm = ImageIO.read(new File("C:\\Users\\X\\Desktop\\helm.png"));
 
+                    pierscien = ImageIO.read(new File(classLoader.getResource("pierscien.png").getFile()));
+                    miecz = ImageIO.read(new File(classLoader.getResource("miecz.png").getFile()));
+                    naszyjnik = ImageIO.read(new File(classLoader.getResource("naszyjnik.png").getFile()));
+                    rekawice = ImageIO.read(new File(classLoader.getResource("rekawice.png").getFile()));
+                    zbroja = ImageIO.read(new File(classLoader.getResource("zbroja.png").getFile()));
+                    buty = ImageIO.read(new File(classLoader.getResource("buty.png").getFile()));
+                    helm = ImageIO.read(new File(classLoader.getResource("helm.png").getFile()));
+
+                    arcymagpierscien = ImageIO.read(new File(classLoader.getResource("arcymagpierscien.png").getFile()));
+                    arcymagmiecz = ImageIO.read(new File(classLoader.getResource("arcymagmiecz.png").getFile()));
+                    arcymagnaszyjnik = ImageIO.read(new File(classLoader.getResource("arcymagnaszyjnik.png").getFile()));
+                    arcymagrekawice = ImageIO.read(new File(classLoader.getResource("arcymagrekawice.png").getFile()));
+                    arcymagzbroja = ImageIO.read(new File(classLoader.getResource("arcymagzbroja.png").getFile()));
+                    arcymagbuty = ImageIO.read(new File(classLoader.getResource("arcymagbuty.png").getFile()));
+                    arcymaghelm = ImageIO.read(new File(classLoader.getResource("arcymaghelm.png").getFile()));
 
                     image = ImageIO.read(new File("C:\\Users\\X\\Desktop\\7.png"));
                 }
                 catch (IOException es) {
                     es.printStackTrace();
                 }
+
+            if(whatcompare(80,204,arcymagbuty,image)==true){
+                System.out.println("buty");
+            }
+            if(whatcompare(80+8,204+8,arcymagbuty,image)==true){
+                System.out.println("buty");
+            }
+            if(whatcompare(80,204,arcymaghelm,image)==true){
+                System.out.println("helm");
+            }
+            if(whatcompare(80+8,204+8,arcymaghelm,image)==true){
+                System.out.println("helm");
+            }
+            if(whatcompare(80,204,arcymagzbroja,image)==true){
+                System.out.println("zbroja");
+            }
+            if(whatcompare(80+8,204+8,arcymagzbroja,image)==true){
+                System.out.println("zbroja");
+            }
+            if(whatcompare(80,204,arcymagpierscien,image)==true){
+                System.out.println("pierscien");
+            }
+            if(whatcompare(80+8,204+8,arcymagpierscien,image)==true){
+                System.out.println("pierscien");
+            }
+            if(whatcompare(80,204,arcymagmiecz,image)==true){
+                System.out.println("miecz");
+            }
+            if(whatcompare(80+8,204+8,arcymagmiecz,image)==true){
+                System.out.println("miecz");
+            }
+            if(whatcompare(80,204,arcymagnaszyjnik,image)==true){
+                System.out.println("naszyjnik");
+            }
+            if(whatcompare(80+8,204+8,arcymagnaszyjnik,image)==true){
+                System.out.println("naszyjnik");
+            }
+            if(whatcompare(80,204,arcymagrekawice,image)==true){
+                System.out.println("rekawice");
+            }
+            if(whatcompare(80+8,204+8,arcymagrekawice,image)==true){
+                System.out.println("rekawice");
+            }
+
+
+
+
 
             ////////////////helm///////////
 
@@ -715,6 +780,25 @@ public class MainGui extends JFrame {
         }
 
         if(g>2500) {
+            return true;
+        }
+        else return false;
+
+    }
+
+    private boolean whatcompare (int a, int b, BufferedImage imgA, BufferedImage imgB) {
+        int g=0;
+
+        for ( int y = b; y < (b+43); y++) {
+            for (int x = a; x < (a+320); x++) {
+                // Compare the pixels for equality.
+                if (imgA.getRGB(x-a, y-b) == imgB.getRGB(x, y)) {
+                    g=g+1;
+                }
+            }
+        }
+
+        if(g>13000) {
             return true;
         }
         else return false;
