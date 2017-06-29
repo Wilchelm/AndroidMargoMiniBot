@@ -32,7 +32,6 @@ public class MainGui extends JFrame {
     public MainGui() {
         super("AndroiMargoMiniBot");
 
-
         setMainPanel();
         setCenterArea();
 
@@ -74,20 +73,23 @@ public class MainGui extends JFrame {
         mainPanel.add(centerPanel);
     }
 
-
     private void setOnClicks() {
+
+        while(i>0) {
+            autoexp.exp();
+            autoexp.exp2();
+            System.out.println("dziala");
+        }
+
         startButton.addActionListener(e -> {
-
-            i=1;
-
-                autoexp.exp();
-
-
-
-
+            i=2;
+            System.out.print(i);
         });
 
-        stopButton.addActionListener(e -> {i=0;});
+        stopButton.addActionListener(e -> {
+            i=0;
+            System.out.print(i);
+        });
 
         arcymagButton.addActionListener(e -> {
 
@@ -108,8 +110,5 @@ public class MainGui extends JFrame {
         });
 
     }
-
-
-
 
 }
