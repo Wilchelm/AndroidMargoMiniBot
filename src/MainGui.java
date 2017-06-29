@@ -1,5 +1,6 @@
 import Controls.Arcymag;
 import Controls.Autoexp;
+import Controls.Loop;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -9,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Created by X on 28.06.2017.
@@ -19,15 +21,15 @@ public class MainGui extends JFrame {
     private JButton stopButton;
     private JPanel mainPanel;
     private JButton arcymagButton;
-    int i=0;
 
     Arcymag arcymag = new Arcymag();
-    Autoexp autoexp = new Autoexp();
+    Loop loop = new Loop();
 
 
     public static void main(String[] args) {
         new MainGui();
     }
+
 
     public MainGui() {
         super("AndroiMargoMiniBot");
@@ -74,21 +76,22 @@ public class MainGui extends JFrame {
     }
 
     private void setOnClicks() {
-
-        while(i>0) {
-            autoexp.exp();
-            autoexp.exp2();
-            System.out.println("dziala");
-        }
-
         startButton.addActionListener(e -> {
-            i=2;
-            System.out.print(i);
+            Thread thread = new Thread() {
+                public void run() {
+                    loop.start();
+                }
+            };
+            thread.start();
         });
 
         stopButton.addActionListener(e -> {
-            i=0;
-            System.out.print(i);
+            Thread thread = new Thread() {
+                public void run() {
+                    loop.stop();
+                }
+            };
+            thread.start();
         });
 
         arcymagButton.addActionListener(e -> {
