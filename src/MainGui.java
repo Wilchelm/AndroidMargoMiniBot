@@ -21,6 +21,7 @@ public class MainGui extends JFrame {
     private JButton stopButton;
     private JPanel mainPanel;
     private JButton arcymagButton;
+    int i=0;
 
     Arcymag arcymag = new Arcymag();
     Loop loop = new Loop();
@@ -76,13 +77,17 @@ public class MainGui extends JFrame {
     }
 
     private void setOnClicks() {
+
         startButton.addActionListener(e -> {
-            Thread thread = new Thread() {
-                public void run() {
-                    loop.start();
-                }
-            };
-            thread.start();
+            if(i==0) {
+                Thread thread = new Thread() {
+                    public void run() {
+                        loop.start();
+                    }
+                };
+                thread.start();
+                i=1;
+            }
         });
 
         stopButton.addActionListener(e -> {
@@ -92,10 +97,14 @@ public class MainGui extends JFrame {
                 }
             };
             thread.start();
+            i=0;
         });
 
         arcymagButton.addActionListener(e -> {
 
+            System.out.print(java.lang.Thread.activeCount());
+
+            /*
             long start=System.currentTimeMillis();
 
             String mainCommand=("cmd /B start cmd.exe /K \"adb shell screencap -p /mnt/sdcard/output.png && adb pull /mnt/sdcard/output.png C:\\Users\\X\\Desktop\\output.png && adb shell rm /mnt/sdcard/output.png\"");
@@ -110,6 +119,7 @@ public class MainGui extends JFrame {
 
             long stop=System.currentTimeMillis();
             System.out.println("Czas wykonania (w milisekundach): "+(stop-start));
+            */
         });
 
     }

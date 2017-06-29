@@ -13,7 +13,6 @@ public class Loop implements Runnable {
         while (!cancelled) {
             autoexp.exp();
             autoexp.exp2();
-            System.out.println("work");
         }
     }
 
