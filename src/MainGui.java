@@ -102,24 +102,82 @@ public class MainGui extends JFrame {
 
         arcymagButton.addActionListener(e -> {
 
-            System.out.print(java.lang.Thread.activeCount());
-
-            /*
             long start=System.currentTimeMillis();
 
-            String mainCommand=("cmd /B start cmd.exe /K \"adb shell screencap -p /mnt/sdcard/output.png && adb pull /mnt/sdcard/output.png C:\\Users\\X\\Desktop\\output.png && adb shell rm /mnt/sdcard/output.png\"");
+            String mainCommand=("cmd /B start cmd.exe /K \"adb shell screencap -p \"/sdcard/output.png\" && adb pull \"/sdcard/output.png\" \"C:\\Users\\X\\IdeaProjects\\output.png\" && adb shell rm \"/sdcard/output.png\" \"");
             try{
                 Runtime.getRuntime().exec(mainCommand);
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException ex) {
+                Thread.currentThread().interrupt();
+            }
+            System.out.print("done1");
 
+            if(arcymag.arcymagcheck()==true) {
+                Thread thread = new Thread() {
+                    public void run() {
+                        loop.stop();
+                    }
+                };
+                thread.start();
+                i=0;
+                arcymag.arcymag1();
+            }
 
-            arcymag.arcymag();
+            String mainCommand2=("cmd /B start cmd.exe /K \"adb shell screencap -p \"/sdcard/output.png\" && adb pull \"/sdcard/output.png\" \"C:\\Users\\X\\IdeaProjects\\output.png\" && adb shell rm \"/sdcard/output.png\" \"");
+            try{
+                Runtime.getRuntime().exec(mainCommand2);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException ex) {
+                Thread.currentThread().interrupt();
+            }
+            System.out.print("done2");
 
+            if(arcymag.arcymagcheck()==true) {
+                Thread thread = new Thread() {
+                    public void run() {
+                        loop.stop();
+                    }
+                };
+                thread.start();
+                i=0;
+                arcymag.arcymag2();
+            }
+
+            String mainCommand3=("cmd /B start cmd.exe /K \"adb shell screencap -p \"/sdcard/output.png\" && adb pull \"/sdcard/output.png\" \"C:\\Users\\X\\IdeaProjects\\output.png\" && adb shell rm \"/sdcard/output.png\" \"");
+            try{
+                Runtime.getRuntime().exec(mainCommand3);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException ex) {
+                Thread.currentThread().interrupt();
+            }
+            System.out.print("done3");
+
+            if(arcymag.arcymagcheck()==true) {
+                Thread thread = new Thread() {
+                    public void run() {
+                        loop.stop();
+                    }
+                };
+                thread.start();
+                i=0;
+                arcymag.arcymag3();
+            }
             long stop=System.currentTimeMillis();
             System.out.println("Czas wykonania (w milisekundach): "+(stop-start));
-            */
+
         });
 
     }
