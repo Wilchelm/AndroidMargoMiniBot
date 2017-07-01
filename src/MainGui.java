@@ -69,7 +69,7 @@ public class MainGui extends JFrame {
         stopButton = new JButton(" Stop  ");
         stopButton.setPreferredSize(new Dimension(200, 100));
         centerPanel.add(stopButton, gbc);
-        arcymagButton = new JButton("Arcymag");
+        arcymagButton = new JButton("Stop -> Arcymag");
         arcymagButton.setPreferredSize(new Dimension(200, 100));
         centerPanel.add(arcymagButton, gbc);
 
@@ -102,11 +102,13 @@ public class MainGui extends JFrame {
 
         arcymagButton.addActionListener(e -> {
 
+            Runtime rs = Runtime.getRuntime();
+
             long start=System.currentTimeMillis();
 
             String mainCommand=("cmd /B start cmd.exe /K \"adb shell screencap -p \"/sdcard/output.png\" && adb pull \"/sdcard/output.png\" \"C:\\Users\\X\\IdeaProjects\\output.png\" && adb shell rm \"/sdcard/output.png\" \"");
             try{
-                Runtime.getRuntime().exec(mainCommand);
+                rs.exec(mainCommand);
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -115,22 +117,15 @@ public class MainGui extends JFrame {
             } catch (InterruptedException ex) {
                 Thread.currentThread().interrupt();
             }
-            System.out.print("done1");
 
             if(arcymag.arcymagcheck()==true) {
-                Thread thread = new Thread() {
-                    public void run() {
-                        loop.stop();
-                    }
-                };
-                thread.start();
-                i=0;
                 arcymag.arcymag1();
             }
+            else System.out.print("Nie znaleziono");
 
             String mainCommand2=("cmd /B start cmd.exe /K \"adb shell screencap -p \"/sdcard/output.png\" && adb pull \"/sdcard/output.png\" \"C:\\Users\\X\\IdeaProjects\\output.png\" && adb shell rm \"/sdcard/output.png\" \"");
             try{
-                Runtime.getRuntime().exec(mainCommand2);
+                rs.exec(mainCommand2);
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -139,42 +134,28 @@ public class MainGui extends JFrame {
             } catch (InterruptedException ex) {
                 Thread.currentThread().interrupt();
             }
-            System.out.print("done2");
 
             if(arcymag.arcymagcheck()==true) {
-                Thread thread = new Thread() {
-                    public void run() {
-                        loop.stop();
-                    }
-                };
-                thread.start();
-                i=0;
                 arcymag.arcymag2();
             }
+            else System.out.print("Nie znaleziono");
 
             String mainCommand3=("cmd /B start cmd.exe /K \"adb shell screencap -p \"/sdcard/output.png\" && adb pull \"/sdcard/output.png\" \"C:\\Users\\X\\IdeaProjects\\output.png\" && adb shell rm \"/sdcard/output.png\" \"");
             try{
-                Runtime.getRuntime().exec(mainCommand3);
+                rs.exec(mainCommand3);
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
             try {
-                Thread.sleep(5000);
+                Thread.sleep(7000);
             } catch (InterruptedException ex) {
                 Thread.currentThread().interrupt();
             }
-            System.out.print("done3");
 
             if(arcymag.arcymagcheck()==true) {
-                Thread thread = new Thread() {
-                    public void run() {
-                        loop.stop();
-                    }
-                };
-                thread.start();
-                i=0;
                 arcymag.arcymag3();
             }
+            else System.out.print("Nie znaleziono");
             long stop=System.currentTimeMillis();
             System.out.println("Czas wykonania (w milisekundach): "+(stop-start));
 

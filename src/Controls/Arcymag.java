@@ -27,55 +27,48 @@ public class Arcymag {
     private BufferedImage arcymagbuty;
 
 
-    boolean pole1 = false;
-    boolean pole2 = false;
-    boolean pole3 = false;
+    private boolean compare(int a, int b, BufferedImage imgA, BufferedImage imgB) {
+        int g = 0;
 
-	
-    private boolean compare (int a, int b, BufferedImage imgA, BufferedImage imgB) {
-        int g=0;
-
-        for ( int y = b; y < (b+58); y++) {
-            for (int x = a; x < (a+58); x++) {
+        for (int y = b; y < (b + 58); y++) {
+            for (int x = a; x < (a + 58); x++) {
                 // Compare the pixels for equality.
-                if (imgA.getRGB(x-a, y-b) == imgB.getRGB(x, y)) {
-                    g=g+1;
+                if (imgA.getRGB(x - a, y - b) == imgB.getRGB(x, y)) {
+                    g = g + 1;
                 }
             }
         }
 
-        if(g>2500) {
+        if (g > 2500) {
             return true;
-        }
-        else return false;
+        } else return false;
 
     }
 
-    private boolean whatcompare (int a, int b, BufferedImage imgA, BufferedImage imgB) {
-        int g=0;
+    private boolean whatcompare(int a, int b, BufferedImage imgA, BufferedImage imgB) {
+        int g = 0;
 
-        for ( int y = b; y < (b+43); y++) {
-            for (int x = a; x < (a+320); x++) {
+        for (int y = b; y < (b + 39); y++) {
+            for (int x = a; x < (a + 320); x++) {
                 // Compare the pixels for equality.
-                if (imgA.getRGB(x-a, y-b) == imgB.getRGB(x, y)) {
-                    g=g+1;
+                if (imgA.getRGB(x - a, y - b) == imgB.getRGB(x, y)) {
+                    g = g + 1;
                 }
             }
         }
 
-        if(g>13000) {
+        if (g > 11000) {
             return true;
-        }
-        else return false;
+        } else return false;
 
     }
 
     public boolean arcymagcheck() {
 
-		ClassLoader classLoader = getClass().getClassLoader();
-		
-		try {
-			arcymagpierscien = ImageIO.read(new File(classLoader.getResource("arcymagpierscien.png").getFile()));
+        ClassLoader classLoader = getClass().getClassLoader();
+
+        try {
+            arcymagpierscien = ImageIO.read(new File(classLoader.getResource("arcymagpierscien.png").getFile()));
             arcymagmiecz = ImageIO.read(new File(classLoader.getResource("arcymagmiecz.png").getFile()));
             arcymagnaszyjnik = ImageIO.read(new File(classLoader.getResource("arcymagnaszyjnik.png").getFile()));
             arcymagrekawice = ImageIO.read(new File(classLoader.getResource("arcymagrekawice.png").getFile()));
@@ -83,80 +76,80 @@ public class Arcymag {
             arcymagbuty = ImageIO.read(new File(classLoader.getResource("arcymagbuty.png").getFile()));
             arcymaghelm = ImageIO.read(new File(classLoader.getResource("arcymaghelm.png").getFile()));
 
-			image = ImageIO.read(new File("C:\\Users\\X\\IdeaProjects\\output.png"));
+            image = ImageIO.read(new File("C:\\Users\\X\\IdeaProjects\\output.png"));
         } catch (IOException es) {
             es.printStackTrace();
         }
-		
-		if(whatcompare(80,204,arcymagpierscien,image)==true) {
-			return true;
-		}
-		if(whatcompare(80,216,arcymagpierscien,image)==true) {
-			return true;
-		}
-		if(whatcompare(80,204,arcymagmiecz,image)==true) {
-			return true;
-		}
-		if(whatcompare(80,216,arcymagmiecz,image)==true) {
-			return true;
-		}
-		if(whatcompare(80,204,arcymagnaszyjnik,image)==true) {
-			return true;
-		}
-		if(whatcompare(80,216,arcymagnaszyjnik,image)==true) {
-			return true;
-		}
-		if(whatcompare(80,204,arcymagrekawice,image)==true) {
-			return true;
-		}
-		if(whatcompare(80,216,arcymagrekawice,image)==true) {
-			return true;
-		}
-		if(whatcompare(80,204,arcymagzbroja,image)==true) {
-			return true;
-		}
-		if(whatcompare(80,216,arcymagzbroja,image)==true) {
-			return true;
-		}
-		if(whatcompare(80,204,arcymagbuty,image)==true) {
-			return true;
-		}
-		if(whatcompare(80,216,arcymagbuty,image)==true) {
-			return true;
-		}
-		if(whatcompare(80,204,arcymaghelm,image)==true) {
-			return true;
-		}
-		if(whatcompare(80,216,arcymaghelm,image)==true) {
-			return true;
-		}
-		else return false;
-		
+
+        if (whatcompare(80, 204, arcymagpierscien, image) == true) {
+            return true;
+        }
+        if (whatcompare(80, 216, arcymagpierscien, image) == true) {
+            return true;
+        }
+        if (whatcompare(80, 204, arcymagmiecz, image) == true) {
+            return true;
+        }
+        if (whatcompare(80, 216, arcymagmiecz, image) == true) {
+            return true;
+        }
+        if (whatcompare(80, 204, arcymagnaszyjnik, image) == true) {
+            return true;
+        }
+        if (whatcompare(80, 216, arcymagnaszyjnik, image) == true) {
+            return true;
+        }
+        if (whatcompare(80, 204, arcymagrekawice, image) == true) {
+            return true;
+        }
+        if (whatcompare(80, 216, arcymagrekawice, image) == true) {
+            return true;
+        }
+        if (whatcompare(80, 204, arcymagzbroja, image) == true) {
+            return true;
+        }
+        if (whatcompare(80, 216, arcymagzbroja, image) == true) {
+            return true;
+        }
+        if (whatcompare(80, 204, arcymagbuty, image) == true) {
+            return true;
+        }
+        if (whatcompare(80, 216, arcymagbuty, image) == true) {
+            return true;
+        }
+        if (whatcompare(80, 204, arcymaghelm, image) == true) {
+            return true;
+        }
+        if (whatcompare(80, 216, arcymaghelm, image) == true) {
+            return true;
+        } else return false;
+
     }
-	
-	private void sleep5 () {
-		try {
-			Thread.sleep(1500);
-		} catch (InterruptedException ex) {
-			Thread.currentThread().interrupt();
-		}
-	}
-	
-	private void swipe(String x) {
+
+    private void sleep5() {
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    private void swipe(String x) {
 
         Runtime rs = Runtime.getRuntime();
 
-		try {
-			rs.exec(x);
-		} catch (IOException exception) {
-			exception.printStackTrace();
-		}
+        try {
+            rs.exec(x);
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
 
-	}
+    }
 
 
     public void arcymag1() {
 
+        boolean zmienna = false;
         ClassLoader classLoader = getClass().getClassLoader();
 
         try {
@@ -178,2398 +171,2697 @@ public class Arcymag {
             arcymaghelm = ImageIO.read(new File(classLoader.getResource("arcymaghelm.png").getFile()));
 
             image = ImageIO.read(new File("C:\\Users\\X\\IdeaProjects\\output.png"));
+
         } catch (IOException es) {
             es.printStackTrace();
         }
 
-        if(whatcompare(80,204,arcymagpierscien,image)==true) {
+        if (whatcompare(80, 204, arcymagpierscien, image) == true) {
+
+            System.out.println("Zwróć Arcymagowi: pierscien");
+
+            ////////////////pierscien///////////
+
+            if (compare(79, 243, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 243, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 243, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 243, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 243, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 309, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 309, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 309, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 309, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 309, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 375, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 375, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 375, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 375, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 375, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 441, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 441, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 441, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 441, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 441, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 507, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 507, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 507, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 507, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 507, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+        }
+        if (whatcompare(80, 216, arcymagpierscien, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: pierscien");
 
 
             ////////////////pierscien///////////
 
-            if (compare(79, 247, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
-				
-				swipe(x);
-			
+            if (compare(79, 255, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-
-            if (compare(145, 247, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 255, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 247, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 255, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 247, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 255, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 247, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 313, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 313, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 313, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 313, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 313, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 255, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 379, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 321, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 379, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 321, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 379, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 321, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 379, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 321, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 379, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 445, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 445, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 445, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 445, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 445, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 321, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 511, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 377, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 511, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 377, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 511, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 377, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 511, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 377, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 511, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
-                
-                
-
-				swipe(x);
-
-            }
-        }
-        if(whatcompare(80,216,arcymagpierscien,image)==true) {
-
-            System.out.println("Zwróć Arcymagowi: pierscien");
-
-
-            ////////////////pierscien///////////
-
-            if (compare(79, 259, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 259, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 259, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 259, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 259, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 377, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 325, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 453, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 325, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 453, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 325, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 453, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 325, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 453, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 325, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 381, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 381, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 381, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 381, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 381, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 453, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 457, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 519, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 457, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 519, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 457, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 519, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 457, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 519, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 457, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 523, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 523, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 523, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 523, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
-                
-
-				swipe(x);
-
-            }
-            if (compare(343, 523, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
-                
-                
-
-				swipe(x);
-
+            if (compare(343, 519, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
 
 
-        if(whatcompare(80,204,arcymagmiecz,image)==true) {
+        if (whatcompare(80, 204, arcymagmiecz, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: miecz");
 
-
             ////////////////miecz///////////
 
-            if (compare(79, 247, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
-
-                swipe(x);
-
+            if (compare(79, 243, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-
-            if (compare(145, 247, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 243, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 247, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 243, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 247, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 243, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 247, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 313, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 313, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 313, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 313, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 313, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 243, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 379, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 309, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 379, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 309, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 379, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 309, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 379, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 309, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 379, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 445, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 445, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 445, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 445, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 445, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 309, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 511, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 375, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 511, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 375, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 511, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 375, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 511, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 375, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 511, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
-                
-                
+            if (compare(343, 375, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 441, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 441, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 441, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 441, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 441, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 507, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 507, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 507, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 507, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 507, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
-        if(whatcompare(80,216,arcymagmiecz,image)==true) {
+        if (whatcompare(80, 216, arcymagmiecz, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: miecz");
 
-
             ////////////////miecz///////////
 
-            if (compare(79, 259, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 255, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 259, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 255, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 259, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 255, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 259, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 255, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 259, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 325, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 325, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 325, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 325, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 325, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 255, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 381, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 321, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 381, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 321, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 381, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 321, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 381, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 321, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 381, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 457, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 457, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 457, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 457, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 457, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 321, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 523, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 377, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 523, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 377, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 523, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 377, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 523, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 377, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 523, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
-                
-                
+            if (compare(343, 377, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 453, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 453, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 453, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 453, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 453, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 519, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 519, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 519, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 519, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 519, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
 
 
-        if(whatcompare(80,204,arcymagnaszyjnik,image)==true) {
+        if (whatcompare(80, 204, arcymagnaszyjnik, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: naszyjnik");
 
-
             ////////////////naszyjnik///////////
 
-            if (compare(79, 247, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
-
-                swipe(x);
-
+            if (compare(79, 243, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
 
-            if (compare(145, 247, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 243, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 247, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 243, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 247, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 243, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 247, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 313, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 313, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 313, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 313, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 313, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 243, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 379, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 309, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 379, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 309, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 379, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 309, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 379, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 309, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 379, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 445, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 445, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 445, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 445, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 445, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 309, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 511, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 375, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 511, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 375, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 511, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 375, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 511, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 375, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 511, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
-                
-                
+            if (compare(343, 375, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 441, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 441, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 441, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 441, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 441, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 507, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 507, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 507, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 507, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 507, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
-        if(whatcompare(80,216,arcymagnaszyjnik,image)==true) {
+        if (whatcompare(80, 216, arcymagnaszyjnik, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: naszyjnik");
 
-
             ////////////////naszyjnik///////////
 
-            if (compare(79, 259, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 255, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 259, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 255, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 259, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 255, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 259, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 255, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 259, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 325, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 325, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 325, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 325, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 325, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 255, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 381, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 321, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 381, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 321, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 381, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 321, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 381, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 321, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 381, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 457, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 457, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 457, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 457, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 457, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 321, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 523, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 377, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 523, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 377, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 523, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 377, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 523, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 377, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 523, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
-                
-                
+            if (compare(343, 377, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 453, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 453, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 453, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 453, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 453, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 519, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 519, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 519, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 519, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 519, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
 
 
-        if(whatcompare(80,204,arcymagrekawice,image)==true) {
+        if (whatcompare(80, 204, arcymagrekawice, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: rekawice");
 
-
             ////////////////rekawice///////////
 
-            if (compare(79, 247, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
-
-                swipe(x);
-
+            if (compare(79, 243, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
 
-            if (compare(145, 247, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 243, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 247, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 243, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 247, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 243, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 247, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 313, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 313, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 313, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 313, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 313, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 243, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 379, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 309, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 379, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 309, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 379, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 309, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 379, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 309, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 379, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 445, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 445, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 445, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 445, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 445, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 309, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 511, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 375, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 511, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 375, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 511, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 375, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 511, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 375, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 511, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
-                
-                
+            if (compare(343, 375, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 441, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 441, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 441, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 441, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 441, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 507, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 507, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 507, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 507, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 507, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
-        if(whatcompare(80,216,arcymagrekawice,image)==true) {
+        if (whatcompare(80, 216, arcymagrekawice, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: rekawice");
 
-
             ////////////////rekawice///////////
 
-            if (compare(79, 259, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 255, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 259, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 255, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 259, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 255, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 259, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 255, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 259, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 325, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 325, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 325, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 325, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 325, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 255, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 381, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 321, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 381, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 321, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 381, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 321, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 381, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 321, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 381, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 457, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 457, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 457, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 457, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 457, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 321, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 523, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 377, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 523, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 377, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 523, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 377, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 523, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 377, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 523, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
-                
-                
+            if (compare(343, 377, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 453, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 453, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 453, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 453, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 453, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 519, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 519, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 519, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 519, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 519, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
 
 
-        if(whatcompare(80,204,arcymagzbroja,image)==true) {
+        if (whatcompare(80, 204, arcymagzbroja, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: zbroja");
 
-
             ////////////////zbroja///////////
 
-            if (compare(79, 247, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
-
-                swipe(x);
-
+            if (compare(79, 243, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-
-            if (compare(145, 247, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 243, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 247, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 243, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 247, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 243, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 247, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 313, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 313, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 313, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 313, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 313, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 243, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 379, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 309, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 379, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 309, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 379, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 309, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 379, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 309, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 379, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 445, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 445, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 445, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 445, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 445, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 309, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 511, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 375, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 511, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 375, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 511, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 375, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 511, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 375, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 511, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
-                
-                
+            if (compare(343, 375, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 441, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 441, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 441, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 441, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 441, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 507, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 507, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 507, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 507, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 507, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
-        if(whatcompare(80,216,arcymagzbroja,image)==true) {
+        if (whatcompare(80, 216, arcymagzbroja, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: zbroja");
 
-
             ////////////////zbroja///////////
 
-            if (compare(79, 259, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 255, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 259, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 255, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 259, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 255, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 259, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 255, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 259, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 325, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 325, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 325, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 325, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 325, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 255, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 381, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 321, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 381, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 321, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 381, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 321, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 381, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 321, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 381, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 457, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 457, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 457, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 457, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 457, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 321, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 523, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 377, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 523, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 377, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 523, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 377, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 523, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 377, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 523, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
-                
-                
+            if (compare(343, 377, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 453, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 453, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 453, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 453, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 453, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 519, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 519, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 519, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 519, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 519, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
 
 
-        if(whatcompare(80,204,arcymagbuty,image)==true) {
+        if (whatcompare(80, 204, arcymagbuty, image) == true) {
+
+            System.out.println("Zwróć Arcymagowi: buty");
+
+            ////////////////buty///////////
+
+            if (compare(79, 243, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+
+            if (compare(145, 243, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 243, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 243, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 243, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 309, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 309, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 309, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 309, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 309, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 375, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 375, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 375, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 375, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 375, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 441, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 441, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 441, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 441, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 441, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 507, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 507, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 507, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 507, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 507, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+        }
+        if (whatcompare(80, 216, arcymagbuty, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: buty");
 
 
             ////////////////buty///////////
 
-            if (compare(79, 247, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
-
-                swipe(x);
-
+            if (compare(79, 255, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-
-            if (compare(145, 247, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 255, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 247, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 255, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 247, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 255, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 247, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 313, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 313, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 313, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 313, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 313, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 255, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 379, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 321, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 379, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 321, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 379, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 321, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 379, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 321, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 379, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 445, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 445, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 445, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 445, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 445, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 321, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 511, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 377, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 511, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 377, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 511, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 377, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 511, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 377, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 511, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
-                
-                
-
-				swipe(x);
-
-            }
-        }
-        if(whatcompare(80,216,arcymagbuty,image)==true) {
-
-            System.out.println("Zwróć Arcymagowi: buty");
-
-
-            ////////////////buty///////////
-
-            if (compare(79, 259, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 259, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 259, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 259, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 259, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 377, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 325, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 453, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 325, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 453, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 325, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 453, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 325, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 453, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 325, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 381, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 381, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 381, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 381, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 381, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 453, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 457, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 519, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 457, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 519, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 457, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 519, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 457, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 519, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 457, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 523, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 523, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 523, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 523, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
-                
-
-				swipe(x);
-
-            }
-            if (compare(343, 523, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
-                
-                
-
-				swipe(x);
-
+            if (compare(343, 519, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
 
 
-        if(whatcompare(80,204,arcymaghelm,image)==true) {
+        if (whatcompare(80, 204, arcymaghelm, image) == true) {
+
+            System.out.println("Zwróć Arcymagowi: helm");
+
+            ////////////////helm///////////
+
+            if (compare(79, 243, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 243, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 243, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 243, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 243, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 309, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 309, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 309, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 309, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 309, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 375, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 375, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 375, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 375, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 375, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 441, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 441, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 441, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 441, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 441, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 507, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 507, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 507, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 507, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 507, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+        }
+        if (whatcompare(80, 216, arcymaghelm, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: helm");
 
 
             ////////////////helm///////////
 
-            if (compare(79, 247, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
-
-                swipe(x);
-
+            if (compare(79, 255, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-
-            if (compare(145, 247, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 255, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 247, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 255, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 247, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 255, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 247, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 313, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 313, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 313, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 313, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 313, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 255, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 379, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 321, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 379, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 321, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 379, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 321, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 379, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
-
-				swipe(x);
-
+            if (compare(277, 321, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 379, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 445, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 445, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 445, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 445, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 445, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
-
-				swipe(x);
-
+            if (compare(343, 321, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 511, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(79, 377, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 511, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(145, 377, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 511, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
-
-				swipe(x);
-
+            if (compare(211, 377, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 511, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 377, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 511, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
-                
-                
+            if (compare(343, 377, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 453, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 453, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 453, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 453, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 453, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 519, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 519, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 519, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 519, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 519, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
-        if(whatcompare(80,216,arcymaghelm,image)==true) {
 
-            System.out.println("Zwróć Arcymagowi: helm");
-
-
-            ////////////////helm///////////
-
-            if (compare(79, 259, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 259, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 259, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 259, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 259, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 325, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 325, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 325, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 325, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 325, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 381, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 381, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 381, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 381, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 381, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 457, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 457, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 457, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 457, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 457, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 175 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 523, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 523, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 523, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 175 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 523, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 175 170\"");                
-
-				swipe(x);
-
-            }
-            if (compare(343, 523, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 175 170\"");
-				
-				swipe(x);
-
-            }
-        }
-       
         System.out.println("Koniec arcymag1.");
     }
-	
+
+
     public void arcymag2() {
 
+        boolean zmienna = false;
         ClassLoader classLoader = getClass().getClassLoader();
 
         try {
@@ -2595,2394 +2887,2692 @@ public class Arcymag {
             es.printStackTrace();
         }
 
-        if(whatcompare(80,204,arcymagpierscien,image)==true) {
+        if (whatcompare(80, 204, arcymagpierscien, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: pierscien");
 
 
             ////////////////pierscien///////////
 
-            if (compare(79, 247, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
-				
-				swipe(x);
-			
+            if (compare(79, 243, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-
-            if (compare(145, 247, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 243, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 247, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 243, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 247, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 243, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 247, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 313, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 313, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 313, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 313, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 313, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 243, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 379, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 309, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 379, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 309, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 379, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 309, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 379, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 309, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 379, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 445, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 445, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 445, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 445, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 445, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 309, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 511, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 375, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 511, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 375, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 511, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 375, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 511, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 375, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 511, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
-                
-                
+            if (compare(343, 375, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 441, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 441, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 441, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 441, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 441, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 507, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 507, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 507, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 507, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 507, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
-        if(whatcompare(80,216,arcymagpierscien,image)==true) {
+        if (whatcompare(80, 216, arcymagpierscien, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: pierscien");
 
-
             ////////////////pierscien///////////
 
-            if (compare(79, 259, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 255, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 259, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 255, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 259, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 255, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 259, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 255, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 259, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 325, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 325, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 325, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 325, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 325, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 255, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 381, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 321, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 381, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 321, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 381, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 321, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 381, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 321, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 381, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 457, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 457, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 457, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 457, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 457, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 321, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 523, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 377, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 523, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 377, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 523, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 377, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 523, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 377, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 523, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
-                
-                
+            if (compare(343, 377, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 453, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 453, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 453, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 453, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 453, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 519, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 519, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 519, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 519, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 519, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
 
 
-        if(whatcompare(80,204,arcymagmiecz,image)==true) {
+        if (whatcompare(80, 204, arcymagmiecz, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: miecz");
 
-
             ////////////////miecz///////////
 
-            if (compare(79, 247, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
-
-                swipe(x);
-
+            if (compare(79, 243, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-
-            if (compare(145, 247, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 243, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 247, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 243, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 247, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 243, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 247, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 313, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 313, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 313, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 313, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 313, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 243, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 379, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 309, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 379, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 309, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 379, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 309, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 379, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 309, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 379, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 445, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 445, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 445, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 445, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 445, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 309, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 511, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 375, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 511, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 375, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 511, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 375, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 511, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 375, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 511, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
-                
-                
+            if (compare(343, 375, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 441, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 441, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 441, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 441, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 441, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 507, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 507, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 507, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 507, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 507, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
-        if(whatcompare(80,216,arcymagmiecz,image)==true) {
+        if (whatcompare(80, 216, arcymagmiecz, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: miecz");
 
-
             ////////////////miecz///////////
 
-            if (compare(79, 259, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 255, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 259, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 255, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 259, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 255, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 259, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 255, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 259, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 325, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 325, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 325, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 325, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 325, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 255, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 381, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 321, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 381, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 321, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 381, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 321, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 381, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 321, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 381, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 457, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 457, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 457, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 457, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 457, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 321, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 523, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 377, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 523, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 377, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 523, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 377, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 523, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 377, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 523, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
-                
-                
+            if (compare(343, 377, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 453, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 453, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 453, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 453, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 453, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 519, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 519, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 519, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 519, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 519, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
 
 
-        if(whatcompare(80,204,arcymagnaszyjnik,image)==true) {
+        if (whatcompare(80, 204, arcymagnaszyjnik, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: naszyjnik");
 
-
             ////////////////naszyjnik///////////
 
-            if (compare(79, 247, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
-
-                swipe(x);
-
+            if (compare(79, 243, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
 
-            if (compare(145, 247, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 243, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 247, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 243, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 247, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 243, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 247, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 313, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 313, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 313, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 313, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 313, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 243, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 379, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 309, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 379, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 309, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 379, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 309, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 379, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 309, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 379, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 445, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 445, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 445, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 445, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 445, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 309, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 511, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 375, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 511, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 375, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 511, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 375, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 511, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 375, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 511, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
-                
-                
+            if (compare(343, 375, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 441, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 441, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 441, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 441, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 441, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 507, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 507, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 507, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 507, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 507, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
-        if(whatcompare(80,216,arcymagnaszyjnik,image)==true) {
+        if (whatcompare(80, 216, arcymagnaszyjnik, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: naszyjnik");
 
-
             ////////////////naszyjnik///////////
 
-            if (compare(79, 259, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 255, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 259, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 255, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 259, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 255, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 259, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 255, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 259, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 325, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 325, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 325, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 325, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 325, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 255, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 381, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 321, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 381, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 321, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 381, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 321, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 381, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 321, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 381, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 457, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 457, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 457, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 457, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 457, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 321, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 523, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 377, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 523, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 377, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 523, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 377, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 523, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 377, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 523, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
-                
-                
+            if (compare(343, 377, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 453, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 453, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 453, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 453, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 453, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 519, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 519, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 519, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 519, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 519, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
 
 
-        if(whatcompare(80,204,arcymagrekawice,image)==true) {
+        if (whatcompare(80, 204, arcymagrekawice, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: rekawice");
 
-
             ////////////////rekawice///////////
 
-            if (compare(79, 247, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
-
-                swipe(x);
-
+            if (compare(79, 243, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-
-            if (compare(145, 247, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 243, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 247, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 243, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 247, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 243, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 247, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 313, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 313, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 313, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 313, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 313, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 243, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 379, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 309, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 379, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 309, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 379, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 309, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 379, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 309, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 379, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 445, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 445, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 445, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 445, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 445, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 309, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 511, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 375, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 511, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 375, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 511, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 375, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 511, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 375, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 511, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
-                
-                
+            if (compare(343, 375, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 441, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 441, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 441, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 441, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 441, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 507, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 507, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 507, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 507, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 507, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
-        if(whatcompare(80,216,arcymagrekawice,image)==true) {
+        if (whatcompare(80, 216, arcymagrekawice, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: rekawice");
 
-
             ////////////////rekawice///////////
 
-            if (compare(79, 259, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 255, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 259, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 255, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 259, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 255, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 259, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 255, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 259, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 325, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 325, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 325, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 325, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 325, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 255, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 381, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 321, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 381, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 321, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 381, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 321, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 381, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 321, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 381, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 457, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 457, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 457, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 457, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 457, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 321, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 523, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 377, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 523, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 377, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 523, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 377, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 523, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 377, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 523, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
-                
-                
+            if (compare(343, 377, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 453, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 453, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 453, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 453, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 453, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 519, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 519, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 519, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 519, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 519, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
 
 
-        if(whatcompare(80,204,arcymagzbroja,image)==true) {
+        if (whatcompare(80, 204, arcymagzbroja, image) == true) {
+
+            System.out.println("Zwróć Arcymagowi: zbroja");
+
+            ////////////////zbroja///////////
+
+            if (compare(79, 243, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+
+            if (compare(145, 243, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 243, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 243, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 243, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 309, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 309, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 309, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 309, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 309, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 375, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 375, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 375, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 375, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 375, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 441, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 441, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 441, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 441, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 441, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 507, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 507, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 507, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 507, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 507, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+        }
+        if (whatcompare(80, 216, arcymagzbroja, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: zbroja");
 
 
             ////////////////zbroja///////////
 
-            if (compare(79, 247, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
-
-                swipe(x);
-
+            if (compare(79, 255, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-
-            if (compare(145, 247, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 255, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 247, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 255, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 247, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 255, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 247, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 313, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 313, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 313, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 313, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 313, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 255, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 379, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 321, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 379, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 321, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 379, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 321, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 379, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 321, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 379, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 445, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 445, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 445, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 445, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 445, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 321, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 511, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 377, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 511, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 377, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 511, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 377, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 511, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 377, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 511, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
-                
-                
-
-				swipe(x);
-
-            }
-        }
-        if(whatcompare(80,216,arcymagzbroja,image)==true) {
-
-            System.out.println("Zwróć Arcymagowi: zbroja");
-
-
-            ////////////////zbroja///////////
-
-            if (compare(79, 259, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 259, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 259, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 259, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 259, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 377, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 325, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 453, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 325, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 453, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 325, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 453, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 325, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 453, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 325, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 381, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 381, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 381, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 381, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 381, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 453, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 457, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 519, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 457, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 519, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 457, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 519, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 457, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 519, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 457, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 523, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 523, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 523, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 523, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
-                
-
-				swipe(x);
-
-            }
-            if (compare(343, 523, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
-                
-                
-
-				swipe(x);
-
+            if (compare(343, 519, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
 
 
-        if(whatcompare(80,204,arcymagbuty,image)==true) {
+        if (whatcompare(80, 204, arcymagbuty, image) == true) {
+
+            System.out.println("Zwróć Arcymagowi: buty");
+
+            ////////////////buty///////////
+
+            if (compare(79, 243, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 243, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 243, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 243, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 243, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 309, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 309, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 309, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 309, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 309, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 375, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 375, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 375, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 375, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 375, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 441, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 441, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 441, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 441, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 441, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 507, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 507, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 507, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 507, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 507, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+        }
+        if (whatcompare(80, 216, arcymagbuty, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: buty");
 
 
             ////////////////buty///////////
 
-            if (compare(79, 247, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
-
-                swipe(x);
-
+            if (compare(79, 255, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-
-            if (compare(145, 247, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 255, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 247, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 255, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 247, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 255, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 247, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 313, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 313, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 313, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 313, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 313, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 255, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 379, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 321, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 379, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 321, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 379, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 321, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 379, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 321, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 379, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 445, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 445, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 445, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 445, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 445, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 321, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 511, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 377, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 511, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 377, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 511, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 377, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 511, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 377, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 511, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
-                
-                
-
-				swipe(x);
-
-            }
-        }
-        if(whatcompare(80,216,arcymagbuty,image)==true) {
-
-            System.out.println("Zwróć Arcymagowi: buty");
-
-
-            ////////////////buty///////////
-
-            if (compare(79, 259, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 259, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 259, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 259, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 259, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 377, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 325, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 453, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 325, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 453, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 325, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 453, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 325, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 453, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 325, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 381, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 381, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 381, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 381, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 381, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 453, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 457, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 519, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 457, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 519, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 457, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 519, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 457, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 519, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 457, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 523, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 523, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 523, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 523, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
-                
-
-				swipe(x);
-
-            }
-            if (compare(343, 523, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
-                
-                
-
-				swipe(x);
-
+            if (compare(343, 519, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
 
 
-        if(whatcompare(80,204,arcymaghelm,image)==true) {
+        if (whatcompare(80, 204, arcymaghelm, image) == true) {
+
+            System.out.println("Zwróć Arcymagowi: helm");
+
+            ////////////////helm///////////
+
+            if (compare(79, 243, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 243, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 243, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 243, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 243, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 309, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 309, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 309, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 309, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 309, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 375, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 375, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 375, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 375, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 375, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 441, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 441, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 441, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 441, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 441, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 507, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 507, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 507, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 507, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 507, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+        }
+        if (whatcompare(80, 216, arcymaghelm, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: helm");
 
 
             ////////////////helm///////////
 
-            if (compare(79, 247, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
-
-                swipe(x);
-
+            if (compare(79, 255, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-
-            if (compare(145, 247, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 255, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 247, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 255, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 247, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 255, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 247, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 313, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 313, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 313, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 313, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 313, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 255, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 379, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 321, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 379, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 321, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 379, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 321, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 379, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
-
-				swipe(x);
-
+            if (compare(277, 321, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 379, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 445, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 445, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 445, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 445, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 445, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
-
-				swipe(x);
-
+            if (compare(343, 321, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 511, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(79, 377, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 511, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(145, 377, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 511, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
-
-				swipe(x);
-
+            if (compare(211, 377, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 511, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 377, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 511, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
-                
-                
+            if (compare(343, 377, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 453, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 453, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 453, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 453, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 453, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 519, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 519, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 519, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 519, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 519, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
-        if(whatcompare(80,216,arcymaghelm,image)==true) {
 
-            System.out.println("Zwróć Arcymagowi: helm");
-
-
-            ////////////////helm///////////
-
-            if (compare(79, 259, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 259, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 259, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 259, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 259, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 325, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 325, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 325, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 325, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 325, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 381, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 381, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 381, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 381, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 381, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 457, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 457, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 457, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 457, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 457, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 242 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 523, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 523, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 523, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 242 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 523, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 242 170\"");                
-
-				swipe(x);
-
-            }
-            if (compare(343, 523, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 242 170\"");
-				
-				swipe(x);
-
-            }
-        }
-       
         System.out.println("Koniec arcymag2.");
     }
-	
-	    public void arcymag3() {
 
+
+    public void arcymag3() {
+
+        boolean zmienna = false;
         ClassLoader classLoader = getClass().getClassLoader();
 
         try {
@@ -5004,2396 +5594,2690 @@ public class Arcymag {
             arcymaghelm = ImageIO.read(new File(classLoader.getResource("arcymaghelm.png").getFile()));
 
             image = ImageIO.read(new File("C:\\Users\\X\\IdeaProjects\\output.png"));
+
         } catch (IOException es) {
             es.printStackTrace();
         }
 
-        if(whatcompare(80,204,arcymagpierscien,image)==true) {
+        if (whatcompare(80, 204, arcymagpierscien, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: pierscien");
 
-
             ////////////////pierscien///////////
 
-            if (compare(79, 247, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
-				
-				swipe(x);
-			
+            if (compare(79, 243, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
 
-            if (compare(145, 247, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 243, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 247, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 243, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 247, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 243, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 247, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 313, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 313, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 313, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 313, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 313, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 243, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 379, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 309, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 379, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 309, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 379, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 309, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 379, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 309, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 379, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 445, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 445, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 445, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 445, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 445, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 309, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 511, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 375, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 511, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 375, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 511, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 375, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 511, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 375, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 511, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
-                
-                
+            if (compare(343, 375, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 441, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 441, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 441, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 441, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 441, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 507, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 507, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 507, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 507, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 507, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
-        if(whatcompare(80,216,arcymagpierscien,image)==true) {
+        if (whatcompare(80, 216, arcymagpierscien, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: pierscien");
 
-
             ////////////////pierscien///////////
 
-            if (compare(79, 259, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 255, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 259, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 255, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 259, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 255, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 259, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 255, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 259, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 325, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 325, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 325, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 325, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 325, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 255, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 381, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 321, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 381, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 321, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 381, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 321, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 381, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 321, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 381, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 457, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 457, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 457, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 457, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 457, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 321, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 523, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 377, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 523, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 377, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 523, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 377, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 523, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 377, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 523, pierscien, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
-                
-                
+            if (compare(343, 377, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 453, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 453, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 453, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 453, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 453, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 519, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 519, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 519, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 519, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 519, pierscien, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
 
 
-        if(whatcompare(80,204,arcymagmiecz,image)==true) {
+        if (whatcompare(80, 204, arcymagmiecz, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: miecz");
 
-
             ////////////////miecz///////////
 
-            if (compare(79, 247, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
-
-                swipe(x);
-
+            if (compare(79, 243, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
 
-            if (compare(145, 247, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 243, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 247, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 243, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 247, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 243, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 247, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 313, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 313, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 313, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 313, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 313, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 243, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 379, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 309, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 379, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 309, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 379, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 309, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 379, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 309, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 379, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 445, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 445, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 445, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 445, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 445, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 309, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 511, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 375, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 511, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 375, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 511, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 375, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 511, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 375, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 511, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
-                
-                
+            if (compare(343, 375, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 441, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 441, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 441, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 441, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 441, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 507, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 507, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 507, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 507, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 507, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
-        if(whatcompare(80,216,arcymagmiecz,image)==true) {
+        if (whatcompare(80, 216, arcymagmiecz, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: miecz");
 
-
             ////////////////miecz///////////
 
-            if (compare(79, 259, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 255, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 259, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 255, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 259, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 255, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 259, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 255, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 259, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 325, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 325, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 325, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 325, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 325, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 255, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 381, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 321, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 381, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 321, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 381, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 321, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 381, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 321, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 381, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 457, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 457, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 457, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 457, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 457, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 321, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 523, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 377, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 523, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 377, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 523, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 377, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 523, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 377, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 523, miecz, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
-                
-                
+            if (compare(343, 377, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 453, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 453, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 453, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 453, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 453, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 519, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 519, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 519, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 519, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 519, miecz, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
 
 
-        if(whatcompare(80,204,arcymagnaszyjnik,image)==true) {
+        if (whatcompare(80, 204, arcymagnaszyjnik, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: naszyjnik");
 
-
             ////////////////naszyjnik///////////
 
-            if (compare(79, 247, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
-
-                swipe(x);
-
+            if (compare(79, 243, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-
-            if (compare(145, 247, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 243, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 247, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 243, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 247, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 243, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 247, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 313, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 313, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 313, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 313, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 313, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 243, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 379, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 309, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 379, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 309, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 379, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 309, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 379, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 309, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 379, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 445, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 445, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 445, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 445, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 445, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 309, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 511, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 375, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 511, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 375, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 511, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 375, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 511, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 375, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 511, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
-                
-                
+            if (compare(343, 375, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 441, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 441, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 441, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 441, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 441, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 507, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 507, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 507, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 507, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 507, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
-        if(whatcompare(80,216,arcymagnaszyjnik,image)==true) {
+        if (whatcompare(80, 216, arcymagnaszyjnik, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: naszyjnik");
 
-
             ////////////////naszyjnik///////////
 
-            if (compare(79, 259, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 255, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 259, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 255, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 259, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 255, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 259, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 255, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 259, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 325, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 325, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 325, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 325, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 325, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 255, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 381, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 321, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 381, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 321, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 381, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 321, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 381, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 321, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 381, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 457, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 457, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 457, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 457, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 457, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 321, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 523, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 377, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 523, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 377, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 523, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 377, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 523, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 377, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 523, naszyjnik, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
-                
-                
+            if (compare(343, 377, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 453, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 453, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 453, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 453, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 453, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 519, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 519, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 519, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 519, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 519, naszyjnik, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
 
 
-        if(whatcompare(80,204,arcymagrekawice,image)==true) {
+        if (whatcompare(80, 204, arcymagrekawice, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: rekawice");
 
-
             ////////////////rekawice///////////
 
-            if (compare(79, 247, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
-
-                swipe(x);
-
+            if (compare(79, 243, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-
-            if (compare(145, 247, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 243, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 247, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 243, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 247, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 243, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 247, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 313, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 313, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 313, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 313, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 313, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 243, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 379, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 309, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 379, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 309, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 379, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 309, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 379, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 309, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 379, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 445, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 445, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 445, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 445, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 445, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 309, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 511, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 375, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 511, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 375, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 511, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 375, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 511, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 375, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 511, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
-                
-                
+            if (compare(343, 375, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 441, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 441, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 441, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 441, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 441, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 507, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 507, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 507, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 507, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 507, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
-        if(whatcompare(80,216,arcymagrekawice,image)==true) {
+        if (whatcompare(80, 216, arcymagrekawice, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: rekawice");
 
-
             ////////////////rekawice///////////
 
-            if (compare(79, 259, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 255, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 259, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 255, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 259, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 255, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 259, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 255, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 259, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 325, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 325, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 325, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 325, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 325, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 255, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 381, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 321, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 381, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 321, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 381, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 321, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 381, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 321, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 381, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 457, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 457, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 457, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 457, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 457, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 321, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 523, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 377, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 523, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 377, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 523, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 377, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 523, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 377, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 523, rekawice, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
-                
-                
+            if (compare(343, 377, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 453, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 453, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 453, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 453, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 453, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 519, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 519, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 519, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 519, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 519, rekawice, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
 
 
-        if(whatcompare(80,204,arcymagzbroja,image)==true) {
+        if (whatcompare(80, 204, arcymagzbroja, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: zbroja");
 
-
             ////////////////zbroja///////////
 
-            if (compare(79, 247, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
-
-                swipe(x);
-
+            if (compare(79, 243, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-
-            if (compare(145, 247, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 243, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 247, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 243, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 247, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 243, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 247, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 313, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 313, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 313, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 313, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 313, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 243, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 379, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 309, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 379, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 309, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 379, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 309, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 379, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 309, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 379, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 445, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 445, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 445, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 445, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 445, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 309, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 511, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 375, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 511, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 375, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 511, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 375, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 511, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 375, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 511, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
-                
-                
+            if (compare(343, 375, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 441, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 441, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 441, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 441, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 441, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 507, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 507, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 507, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 507, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 507, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
-        if(whatcompare(80,216,arcymagzbroja,image)==true) {
+        if (whatcompare(80, 216, arcymagzbroja, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: zbroja");
 
-
             ////////////////zbroja///////////
 
-            if (compare(79, 259, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 255, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 259, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 255, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 259, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 255, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 259, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 255, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 259, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 325, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 325, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 325, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 325, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 325, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 255, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 381, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 321, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 381, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 321, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 381, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 321, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 381, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 321, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 381, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 457, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 457, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 457, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 457, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 457, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 321, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 523, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 377, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 523, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 377, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 523, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 377, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 523, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 377, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 523, zbroja, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
-                
-                
+            if (compare(343, 377, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 453, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 453, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 453, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 453, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 453, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 519, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 519, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 519, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 519, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 519, zbroja, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
 
 
-        if(whatcompare(80,204,arcymagbuty,image)==true) {
+        if (whatcompare(80, 204, arcymagbuty, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: buty");
 
-
             ////////////////buty///////////
 
-            if (compare(79, 247, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
-
-                swipe(x);
-
+            if (compare(79, 243, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-
-            if (compare(145, 247, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 243, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 247, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 243, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 247, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 243, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 247, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 313, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 313, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 313, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 313, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 313, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 243, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 379, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 309, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 379, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 309, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 379, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 309, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 379, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 309, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 379, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 445, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 445, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 445, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 445, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 445, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 309, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 511, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 375, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 511, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 375, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 511, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 375, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 511, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 375, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 511, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
-                
-                
+            if (compare(343, 375, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 441, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 441, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 441, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 441, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 441, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 507, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 507, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 507, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 507, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 507, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
-        if(whatcompare(80,216,arcymagbuty,image)==true) {
+        if (whatcompare(80, 216, arcymagbuty, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: buty");
 
-
             ////////////////buty///////////
 
-            if (compare(79, 259, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 255, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 259, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 255, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 259, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 255, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 259, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 255, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 259, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 325, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 325, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 325, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 325, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 325, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 255, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 381, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 321, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 381, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 321, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 381, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 321, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 381, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 321, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 381, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 457, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 457, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 457, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 457, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 457, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 321, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 523, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 377, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 523, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 377, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 523, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 377, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 523, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 377, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 523, buty, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
-                
-                
+            if (compare(343, 377, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 453, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 453, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 453, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 453, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 453, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 519, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 519, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 519, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 519, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 519, buty, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
 
 
-        if(whatcompare(80,204,arcymaghelm,image)==true) {
+        if (whatcompare(80, 204, arcymaghelm, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: helm");
 
 
             ////////////////helm///////////
 
-            if (compare(79, 247, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
-
-                swipe(x);
-
+            if (compare(79, 243, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
 
-            if (compare(145, 247, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 243, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 247, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 243, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 247, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 243, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 247, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 313, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 313, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 313, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 313, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 313, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 243, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 379, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 309, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 379, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 309, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 379, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 309, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 379, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 309, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 379, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 445, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 445, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 445, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 445, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 445, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 309, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 511, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 375, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 511, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 375, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 511, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 375, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 511, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
-                
-
-				swipe(x);
-
+            if (compare(277, 375, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 511, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
-                
-                
+            if (compare(343, 375, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
-				swipe(x);
+            if (compare(79, 441, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 441, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 441, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 441, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 441, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
 
+            if (compare(79, 507, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 507, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 507, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 507, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 507, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
         }
-        if(whatcompare(80,216,arcymaghelm,image)==true) {
+        if (whatcompare(80, 216, arcymaghelm, image) == true) {
 
             System.out.println("Zwróć Arcymagowi: helm");
 
-
             ////////////////helm///////////
 
-            if (compare(79, 259, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 255, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 259, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 255, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 259, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 255, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 259, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 255, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 259, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 325, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 325, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 325, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 325, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 325, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 255, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 270 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 381, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 321, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 381, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 321, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 381, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 321, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 381, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
-
-				swipe(x);
-
+            if (compare(277, 321, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 381, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
-
-				swipe(x);
-
-            }
-            ////////////////////////////////////////////////////////
-
-            if (compare(79, 457, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(145, 457, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(211, 457, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(277, 457, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
-
-				swipe(x);
-
-            }
-            if (compare(343, 457, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
-
-				swipe(x);
-
+            if (compare(343, 321, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 335 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
             ////////////////////////////////////////////////////////
 
-            if (compare(79, 523, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(79, 377, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(145, 523, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(145, 377, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(211, 523, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
-
-				swipe(x);
-
+            if (compare(211, 377, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(277, 523, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");                
-
-				swipe(x);
-
+            if (compare(277, 377, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
             }
-            if (compare(343, 523, helm, image) == true) {
-                String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
-				
-				swipe(x);
+            if (compare(343, 377, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 400 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 453, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 453, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 453, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 453, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 453, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 470 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            ////////////////////////////////////////////////////////
+
+            if (compare(79, 519, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(145, 519, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(211, 519, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(277, 519, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
+            }
+            if (compare(343, 519, helm, image) == true) {
+                if (zmienna == false) {
+                    String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 170\"");
+                    swipe(x);
+                    zmienna = true;
+                }
 
             }
         }
-       
+
         System.out.println("Koniec arcymag3.");
     }
-
-
-
 }
+
