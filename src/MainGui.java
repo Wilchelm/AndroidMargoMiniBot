@@ -21,10 +21,13 @@ public class MainGui extends JFrame {
     private JButton stopButton;
     private JPanel mainPanel;
     private JButton arcymagButton;
+    private JLabel background;
     int i=0;
 
     Arcymag arcymag = new Arcymag();
     Loop loop = new Loop();
+    private JButton button1;
+    private JPanel panel1;
 
 
     public static void main(String[] args) {
@@ -43,34 +46,39 @@ public class MainGui extends JFrame {
 
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setVisible(true);
-        setSize(new Dimension(230, 350));
+        setSize(new Dimension(340, 525));
         setLocationRelativeTo(null);
         setResizable(false);
     }
 
     private void setMainPanel() {
         mainPanel = new JPanel();
-        mainPanel.setBackground(Color.BLUE);
+        ClassLoader classLoader = getClass().getClassLoader();
+        try{
+            background = new JLabel(new ImageIcon(ImageIO.read(new File(classLoader.getResource("margonem.png").getFile()))));
+        } catch (IOException es) {
+            es.printStackTrace();
+        }
+        mainPanel.add(background);
         setContentPane(mainPanel);
     }
 
     private void setCenterArea() {
         JPanel centerPanel = new JPanel();
-        centerPanel.setBackground(Color.black);
         centerPanel.setLayout(new GridBagLayout());
-        centerPanel.setPreferredSize(new Dimension(200, 300));
+        centerPanel.setPreferredSize(new Dimension(340, 300));
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.anchor = GridBagConstraints.CENTER;
 
         startButton = new JButton(" Start ");
-        startButton.setPreferredSize(new Dimension(200, 100));
+        startButton.setPreferredSize(new Dimension(320, 100));
         centerPanel.add(startButton, gbc);
         stopButton = new JButton(" Stop  ");
-        stopButton.setPreferredSize(new Dimension(200, 100));
+        stopButton.setPreferredSize(new Dimension(320, 100));
         centerPanel.add(stopButton, gbc);
-        arcymagButton = new JButton("Stop -> Arcymag");
-        arcymagButton.setPreferredSize(new Dimension(200, 100));
+        arcymagButton = new JButton("Stop => Arcymag");
+        arcymagButton.setPreferredSize(new Dimension(320, 100));
         centerPanel.add(arcymagButton, gbc);
 
         mainPanel.add(centerPanel);
@@ -101,10 +109,9 @@ public class MainGui extends JFrame {
         });
 
         arcymagButton.addActionListener(e -> {
-
             Runtime rs = Runtime.getRuntime();
 
-            long start=System.currentTimeMillis();
+            //long start=System.currentTimeMillis();
 
             String mainCommand=("cmd /B start cmd.exe /K \"adb shell screencap -p \"/sdcard/output.png\" && adb pull \"/sdcard/output.png\" \"C:\\Users\\X\\IdeaProjects\\output.png\" && adb shell rm \"/sdcard/output.png\" \"");
             try{
@@ -123,6 +130,13 @@ public class MainGui extends JFrame {
             }
             else System.out.print("Nie znaleziono");
 
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException ex) {
+                Thread.currentThread().interrupt();
+            }
+
+
             String mainCommand2=("cmd /B start cmd.exe /K \"adb shell screencap -p \"/sdcard/output.png\" && adb pull \"/sdcard/output.png\" \"C:\\Users\\X\\IdeaProjects\\output.png\" && adb shell rm \"/sdcard/output.png\" \"");
             try{
                 rs.exec(mainCommand2);
@@ -138,7 +152,13 @@ public class MainGui extends JFrame {
             if(arcymag.arcymagcheck()==true) {
                 arcymag.arcymag2();
             }
-            else System.out.print("Nie znaleziono");
+
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException ex) {
+                Thread.currentThread().interrupt();
+            }
+
 
             String mainCommand3=("cmd /B start cmd.exe /K \"adb shell screencap -p \"/sdcard/output.png\" && adb pull \"/sdcard/output.png\" \"C:\\Users\\X\\IdeaProjects\\output.png\" && adb shell rm \"/sdcard/output.png\" \"");
             try{
@@ -147,7 +167,7 @@ public class MainGui extends JFrame {
                 ex.printStackTrace();
             }
             try {
-                Thread.sleep(7000);
+                Thread.sleep(5000);
             } catch (InterruptedException ex) {
                 Thread.currentThread().interrupt();
             }
@@ -155,9 +175,10 @@ public class MainGui extends JFrame {
             if(arcymag.arcymagcheck()==true) {
                 arcymag.arcymag3();
             }
-            else System.out.print("Nie znaleziono");
-            long stop=System.currentTimeMillis();
-            System.out.println("Czas wykonania (w milisekundach): "+(stop-start));
+
+            //System.out.print(java.lang.Thread.activeCount());
+            //long stop=System.currentTimeMillis();
+            //System.out.println("Czas wykonania (w milisekundach): "+(stop-start));
 
         });
 

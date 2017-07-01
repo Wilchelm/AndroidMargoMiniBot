@@ -18,7 +18,7 @@ public class Autoexp {
             exception.printStackTrace();
         }
         try {
-            Thread.sleep(2000);
+            Thread.sleep(3000);
         } catch (InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
@@ -33,7 +33,7 @@ public class Autoexp {
             exception.printStackTrace();
         }
         try {
-            Thread.sleep(2000);
+            Thread.sleep(3000);
         } catch (InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
