@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Created by X on 28.06.2017.
+ * Created by Wilchelm on 28.06.2017.
  */
 public class Arcymag {
 

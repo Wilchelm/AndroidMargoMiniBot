@@ -1,19 +1,14 @@
 import Controls.Arcymag;
-import Controls.Autoexp;
 import Controls.Loop;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
- * Created by X on 28.06.2017.
+ * Created by Wilchelm on 28.06.2017.
  */
 public class MainGui extends JFrame {
 
@@ -21,6 +16,7 @@ public class MainGui extends JFrame {
     private JButton stopButton;
     private JPanel mainPanel;
     private JButton arcymagButton;
+    private JButton test;
     private JLabel background;
     int i=0;
 
@@ -46,9 +42,11 @@ public class MainGui extends JFrame {
 
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setVisible(true);
-        setSize(new Dimension(340, 525));
+        //setSize(new Dimension(340, 525));
+        setSize(new Dimension(340,625));
         setLocationRelativeTo(null);
-        setResizable(false);
+        //setLocation(1570,510);
+        setResizable(true);
     }
 
     private void setMainPanel() {
@@ -66,10 +64,12 @@ public class MainGui extends JFrame {
     private void setCenterArea() {
         JPanel centerPanel = new JPanel();
         centerPanel.setLayout(new GridBagLayout());
-        centerPanel.setPreferredSize(new Dimension(340, 300));
+        //centerPanel.setPreferredSize(new Dimension(340, 300));
+        centerPanel.setPreferredSize(new Dimension(340, 400));
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.anchor = GridBagConstraints.CENTER;
+
 
         startButton = new JButton(" Start ");
         startButton.setPreferredSize(new Dimension(320, 100));
@@ -80,6 +80,9 @@ public class MainGui extends JFrame {
         arcymagButton = new JButton("Stop => Arcymag");
         arcymagButton.setPreferredSize(new Dimension(320, 100));
         centerPanel.add(arcymagButton, gbc);
+        test = new JButton("Test Screenshot");
+        test.setPreferredSize(new Dimension(320, 100));
+        centerPanel.add(test, gbc);
 
         mainPanel.add(centerPanel);
     }
@@ -180,6 +183,18 @@ public class MainGui extends JFrame {
             //long stop=System.currentTimeMillis();
             //System.out.println("Czas wykonania (w milisekundach): "+(stop-start));
 
+        });
+
+        test.addActionListener(e -> {
+
+            Runtime rs = Runtime.getRuntime();
+
+            String mainCommand=("cmd /B start cmd.exe /K \"adb shell screencap -p \"/sdcard/output.png\" && adb pull \"/sdcard/output.png\" \"C:\\Users\\X\\IdeaProjects\\output.png\" && adb shell rm \"/sdcard/output.png\" \"");
+            try{
+                rs.exec(mainCommand);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
         });
 
     }
