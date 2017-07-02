@@ -11,6 +11,7 @@ public class Loop  implements Runnable {
     Autoexp autoexp = new Autoexp();
     Arcymag arcymag = new Arcymag();
     Krok krok = new Krok();
+    Leczenie leczenie = new Leczenie();
     private volatile boolean cancelled;
     private BufferedImage image;
 
@@ -87,14 +88,10 @@ public class Loop  implements Runnable {
                     arcymag.arcymag3();
                 }
             }
-            //if () {
 
-
-            //}
-            else {
                 autoexp.exp();
+                leczenie.leczenie();
                 autoexp.exp2();
-            }
         }
     }
 

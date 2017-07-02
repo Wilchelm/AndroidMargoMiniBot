@@ -28,15 +28,15 @@ public class Krok {
         if (g > 14000) {
             return true;
         } else return false;
-
     }
+
 
     public void krokCheck() {
         ClassLoader classLoader = getClass().getClassLoader();
         Runtime rs = Runtime.getRuntime();
 
         try {
-            krok =ImageIO.read(new File(classLoader.getResource("krok.png").getFile()));
+            krok = ImageIO.read(new File(classLoader.getResource("krok.png").getFile()));
             image = ImageIO.read(new File("C:\\Users\\X\\IdeaProjects\\output.png"));
         } catch (IOException es) {
             es.printStackTrace();
@@ -70,6 +70,6 @@ public class Krok {
                 Thread.currentThread().interrupt();
             }
         }
-
     }
+
 }
