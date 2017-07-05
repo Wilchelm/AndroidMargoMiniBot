@@ -5606,6 +5606,7 @@ public class Arcymag {
             ////////////////pierscien///////////
 
             if (compare(79, 243, pierscien, image) == true) {
+                System.out.println("1");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 280 307 180\"");
                     swipe(x);
@@ -5614,6 +5615,7 @@ public class Arcymag {
             }
 
             if (compare(145, 243, pierscien, image) == true) {
+                System.out.println("2");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 280 307 180\"");
                     swipe(x);
@@ -5621,6 +5623,7 @@ public class Arcymag {
                 }
             }
             if (compare(211, 243, pierscien, image) == true) {
+                System.out.println("3");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 280 307 180\"");
                     swipe(x);
@@ -5628,6 +5631,7 @@ public class Arcymag {
                 }
             }
             if (compare(277, 243, pierscien, image) == true) {
+                System.out.println("4");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 280 307 180\"");
                     swipe(x);
@@ -5635,6 +5639,7 @@ public class Arcymag {
                 }
             }
             if (compare(343, 243, pierscien, image) == true) {
+                System.out.println("5");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 280 307 180\"");
                     swipe(x);
@@ -5644,6 +5649,7 @@ public class Arcymag {
             ////////////////////////////////////////////////////////
 
             if (compare(79, 309, pierscien, image) == true) {
+                System.out.println("7");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 345 307 180\"");
                     swipe(x);
@@ -5651,6 +5657,7 @@ public class Arcymag {
                 }
             }
             if (compare(145, 309, pierscien, image) == true) {
+                System.out.println("7");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 345 307 180\"");
                     swipe(x);
@@ -5658,6 +5665,7 @@ public class Arcymag {
                 }
             }
             if (compare(211, 309, pierscien, image) == true) {
+                System.out.println("8");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 345 307 180\"");
                     swipe(x);
@@ -5665,6 +5673,7 @@ public class Arcymag {
                 }
             }
             if (compare(277, 309, pierscien, image) == true) {
+                System.out.println("9");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 345 307 180\"");
                     swipe(x);
@@ -5672,6 +5681,7 @@ public class Arcymag {
                 }
             }
             if (compare(343, 309, pierscien, image) == true) {
+                System.out.println("10");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 345 307 180\"");
                     swipe(x);
@@ -5681,6 +5691,7 @@ public class Arcymag {
             ////////////////////////////////////////////////////////
 
             if (compare(79, 375, pierscien, image) == true) {
+                System.out.println("11");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 410 307 180\"");
                     swipe(x);
@@ -5688,6 +5699,7 @@ public class Arcymag {
                 }
             }
             if (compare(145, 375, pierscien, image) == true) {
+                System.out.println("12");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 410 307 180\"");
                     swipe(x);
@@ -5695,6 +5707,7 @@ public class Arcymag {
                 }
             }
             if (compare(211, 375, pierscien, image) == true) {
+                System.out.println("13");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 410 307 180\"");
                     swipe(x);
@@ -5702,6 +5715,7 @@ public class Arcymag {
                 }
             }
             if (compare(277, 375, pierscien, image) == true) {
+                System.out.println("14");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 410 307 180\"");
                     swipe(x);
@@ -5709,6 +5723,7 @@ public class Arcymag {
                 }
             }
             if (compare(343, 375, pierscien, image) == true) {
+                System.out.println("15");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 410 307 180\"");
                     swipe(x);
@@ -5718,6 +5733,7 @@ public class Arcymag {
             ////////////////////////////////////////////////////////
 
             if (compare(79, 441, pierscien, image) == true) {
+                System.out.println("16");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 475 307 180\"");
                     swipe(x);
@@ -5725,6 +5741,7 @@ public class Arcymag {
                 }
             }
             if (compare(145, 441, pierscien, image) == true) {
+                System.out.println("17");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 475 307 180\"");
                     swipe(x);
@@ -5732,6 +5749,7 @@ public class Arcymag {
                 }
             }
             if (compare(211, 441, pierscien, image) == true) {
+                System.out.println("18");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 475 307 180\"");
                     swipe(x);
@@ -5739,6 +5757,7 @@ public class Arcymag {
                 }
             }
             if (compare(277, 441, pierscien, image) == true) {
+                System.out.println("19");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 475 307 180\"");
                     swipe(x);
@@ -5746,6 +5765,7 @@ public class Arcymag {
                 }
             }
             if (compare(343, 441, pierscien, image) == true) {
+                System.out.println("20");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 475 307 180\"");
                     swipe(x);
@@ -5755,6 +5775,7 @@ public class Arcymag {
             ////////////////////////////////////////////////////////
 
             if (compare(79, 507, pierscien, image) == true) {
+                System.out.println("21");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 180\"");
                     swipe(x);
@@ -5762,6 +5783,7 @@ public class Arcymag {
                 }
             }
             if (compare(145, 507, pierscien, image) == true) {
+                System.out.println("22");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 180\"");
                     swipe(x);
@@ -5769,6 +5791,7 @@ public class Arcymag {
                 }
             }
             if (compare(211, 507, pierscien, image) == true) {
+                System.out.println("23");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 180\"");
                     swipe(x);
@@ -5776,6 +5799,7 @@ public class Arcymag {
                 }
             }
             if (compare(277, 507, pierscien, image) == true) {
+                System.out.println("24");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 180\"");
                     swipe(x);
@@ -5783,6 +5807,7 @@ public class Arcymag {
                 }
             }
             if (compare(343, 507, pierscien, image) == true) {
+                System.out.println("25");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 180\"");
                     swipe(x);
@@ -5797,6 +5822,7 @@ public class Arcymag {
             ////////////////pierscien///////////
 
             if (compare(79, 255, pierscien, image) == true) {
+                System.out.println("1");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 280 307 180\"");
                     swipe(x);
@@ -5804,6 +5830,7 @@ public class Arcymag {
                 }
             }
             if (compare(145, 255, pierscien, image) == true) {
+                System.out.println("2");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 280 307 180\"");
                     swipe(x);
@@ -5811,6 +5838,7 @@ public class Arcymag {
                 }
             }
             if (compare(211, 255, pierscien, image) == true) {
+                System.out.println("3");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 280 307 180\"");
                     swipe(x);
@@ -5818,6 +5846,7 @@ public class Arcymag {
                 }
             }
             if (compare(277, 255, pierscien, image) == true) {
+                System.out.println("4");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 280 307 180\"");
                     swipe(x);
@@ -5825,6 +5854,7 @@ public class Arcymag {
                 }
             }
             if (compare(343, 255, pierscien, image) == true) {
+                System.out.println("5");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 280 307 180\"");
                     swipe(x);
@@ -5834,6 +5864,7 @@ public class Arcymag {
             ////////////////////////////////////////////////////////
 
             if (compare(79, 321, pierscien, image) == true) {
+                System.out.println("6");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 345 307 180\"");
                     swipe(x);
@@ -5841,6 +5872,7 @@ public class Arcymag {
                 }
             }
             if (compare(145, 321, pierscien, image) == true) {
+                System.out.println("7");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 345 307 180\"");
                     swipe(x);
@@ -5848,6 +5880,7 @@ public class Arcymag {
                 }
             }
             if (compare(211, 321, pierscien, image) == true) {
+                System.out.println("8");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 345 307 180\"");
                     swipe(x);
@@ -5855,6 +5888,7 @@ public class Arcymag {
                 }
             }
             if (compare(277, 321, pierscien, image) == true) {
+                System.out.println("9");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 345 307 180\"");
                     swipe(x);
@@ -5862,6 +5896,7 @@ public class Arcymag {
                 }
             }
             if (compare(343, 321, pierscien, image) == true) {
+                System.out.println("10");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 345 307 180\"");
                     swipe(x);
@@ -5871,6 +5906,7 @@ public class Arcymag {
             ////////////////////////////////////////////////////////
 
             if (compare(79, 387, pierscien, image) == true) {
+                System.out.println("11");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 410 307 180\"");
                     swipe(x);
@@ -5878,6 +5914,7 @@ public class Arcymag {
                 }
             }
             if (compare(145, 387, pierscien, image) == true) {
+                System.out.println("12");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 410 307 180\"");
                     swipe(x);
@@ -5885,6 +5922,7 @@ public class Arcymag {
                 }
             }
             if (compare(211, 387, pierscien, image) == true) {
+                System.out.println("13");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 410 307 180\"");
                     swipe(x);
@@ -5892,6 +5930,7 @@ public class Arcymag {
                 }
             }
             if (compare(277, 387, pierscien, image) == true) {
+                System.out.println("14");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 410 307 180\"");
                     swipe(x);
@@ -5899,6 +5938,7 @@ public class Arcymag {
                 }
             }
             if (compare(343, 387, pierscien, image) == true) {
+                System.out.println("15");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 410 307 180\"");
                     swipe(x);
@@ -5908,6 +5948,7 @@ public class Arcymag {
             ////////////////////////////////////////////////////////
 
             if (compare(79, 453, pierscien, image) == true) {
+                System.out.println("16");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 475 307 180\"");
                     swipe(x);
@@ -5915,6 +5956,7 @@ public class Arcymag {
                 }
             }
             if (compare(145, 453, pierscien, image) == true) {
+                System.out.println("17");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 475 307 180\"");
                     swipe(x);
@@ -5922,6 +5964,7 @@ public class Arcymag {
                 }
             }
             if (compare(211, 453, pierscien, image) == true) {
+                System.out.println("18");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 475 307 180\"");
                     swipe(x);
@@ -5929,6 +5972,7 @@ public class Arcymag {
                 }
             }
             if (compare(277, 453, pierscien, image) == true) {
+                System.out.println("19");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 475 307 180\"");
                     swipe(x);
@@ -5936,6 +5980,7 @@ public class Arcymag {
                 }
             }
             if (compare(343, 453, pierscien, image) == true) {
+                System.out.println("20");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 475 307 180\"");
                     swipe(x);
@@ -5945,6 +5990,7 @@ public class Arcymag {
             ////////////////////////////////////////////////////////
 
             if (compare(79, 519, pierscien, image) == true) {
+                System.out.println("21");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 110 535 307 180\"");
                     swipe(x);
@@ -5952,6 +5998,7 @@ public class Arcymag {
                 }
             }
             if (compare(145, 519, pierscien, image) == true) {
+                System.out.println("22");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 172 535 307 180\"");
                     swipe(x);
@@ -5959,6 +6006,7 @@ public class Arcymag {
                 }
             }
             if (compare(211, 519, pierscien, image) == true) {
+                System.out.println("23");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 240 535 307 180\"");
                     swipe(x);
@@ -5966,6 +6014,7 @@ public class Arcymag {
                 }
             }
             if (compare(277, 519, pierscien, image) == true) {
+                System.out.println("24");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 305 535 307 180\"");
                     swipe(x);
@@ -5973,6 +6022,7 @@ public class Arcymag {
                 }
             }
             if (compare(343, 519, pierscien, image) == true) {
+                System.out.println("25");
                 if (zmienna == false) {
                     String x = ("cmd /B start cmd.exe /K \"adb shell input swipe 370 535 307 180\"");
                     swipe(x);
